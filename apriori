@@ -1,0 +1,125 @@
+=== Run information ===
+
+Scheme:       weka.associations.Apriori -I -R -N 10 -T 0 -C 0.7 -D 0.05 -U 1.0 -M 0.1 -S -1.0 -c -1
+Relation:     final-weka.filters.unsupervised.attribute.Remove-R1-3,5,7-11,13-21,23-weka.filters.unsupervised.attribute.NumericToNominal-Rfirst-last
+Instances:    200
+Attributes:   6
+              Genre
+              ReadingFrequency
+              AcademicYear_x
+              Department
+              RatingLevel
+              BorrowDurationLevel
+=== Associator model (full training set) ===
+
+
+Apriori
+=======
+
+Minimum support: 0.1 (20 instances)
+Minimum metric <confidence>: 0.7
+Number of cycles performed: 18
+
+Generated sets of large itemsets:
+
+Size of set of large itemsets L(1): 22
+
+Large Itemsets L(1):
+Genre=ml 27
+Genre=non-fiction 32
+Genre=academic 57
+Genre=fiction 43
+Genre=ds 23
+ReadingFrequency=low 81
+ReadingFrequency=high 56
+ReadingFrequency=medium 63
+AcademicYear_x=3rd Year 58
+AcademicYear_x=1st Year 43
+AcademicYear_x=4th Year 58
+AcademicYear_x=2nd Year 41
+Department=EEE 29
+Department=MECH 38
+Department=CSE 29
+Department=CIVIL 87
+RatingLevel=low 74
+RatingLevel=medium 91
+RatingLevel=high 35
+BorrowDurationLevel=long 83
+BorrowDurationLevel=medium 88
+BorrowDurationLevel=short 29
+
+Size of set of large itemsets L(2): 51
+
+Large Itemsets L(2):
+Genre=non-fiction RatingLevel=low 21
+Genre=non-fiction BorrowDurationLevel=medium 20
+Genre=academic ReadingFrequency=low 20
+Genre=academic ReadingFrequency=medium 21
+Genre=academic AcademicYear_x=4th Year 28
+Genre=academic Department=CIVIL 26
+Genre=academic RatingLevel=low 22
+Genre=academic BorrowDurationLevel=medium 30
+Genre=fiction ReadingFrequency=high 22
+Genre=fiction AcademicYear_x=3rd Year 21
+Genre=fiction RatingLevel=medium 24
+Genre=fiction BorrowDurationLevel=long 33
+ReadingFrequency=low AcademicYear_x=3rd Year 24
+ReadingFrequency=low AcademicYear_x=4th Year 27
+ReadingFrequency=low Department=MECH 23
+ReadingFrequency=low Department=CIVIL 24
+ReadingFrequency=low RatingLevel=low 34
+ReadingFrequency=low RatingLevel=medium 43
+ReadingFrequency=low BorrowDurationLevel=long 31
+ReadingFrequency=low BorrowDurationLevel=medium 33
+ReadingFrequency=high RatingLevel=medium 25
+ReadingFrequency=high BorrowDurationLevel=long 32
+ReadingFrequency=medium AcademicYear_x=4th Year 22
+ReadingFrequency=medium Department=CIVIL 46
+ReadingFrequency=medium RatingLevel=low 23
+ReadingFrequency=medium RatingLevel=medium 23
+ReadingFrequency=medium BorrowDurationLevel=long 20
+ReadingFrequency=medium BorrowDurationLevel=medium 38
+AcademicYear_x=3rd Year Department=CIVIL 22
+AcademicYear_x=3rd Year RatingLevel=low 20
+AcademicYear_x=3rd Year RatingLevel=medium 28
+AcademicYear_x=3rd Year BorrowDurationLevel=long 34
+AcademicYear_x=1st Year RatingLevel=low 24
+AcademicYear_x=1st Year BorrowDurationLevel=long 21
+AcademicYear_x=4th Year Department=CIVIL 25
+AcademicYear_x=4th Year RatingLevel=low 26
+AcademicYear_x=4th Year RatingLevel=medium 25
+AcademicYear_x=4th Year BorrowDurationLevel=medium 32
+AcademicYear_x=2nd Year Department=CIVIL 26
+AcademicYear_x=2nd Year RatingLevel=medium 25
+AcademicYear_x=2nd Year BorrowDurationLevel=medium 25
+Department=EEE BorrowDurationLevel=long 25
+Department=MECH RatingLevel=medium 25
+Department=CIVIL RatingLevel=low 38
+Department=CIVIL RatingLevel=medium 33
+Department=CIVIL BorrowDurationLevel=long 34
+Department=CIVIL BorrowDurationLevel=medium 42
+RatingLevel=low BorrowDurationLevel=long 29
+RatingLevel=low BorrowDurationLevel=medium 34
+RatingLevel=medium BorrowDurationLevel=long 37
+RatingLevel=medium BorrowDurationLevel=medium 37
+
+Size of set of large itemsets L(3): 6
+
+Large Itemsets L(3):
+Genre=fiction RatingLevel=medium BorrowDurationLevel=long 20
+ReadingFrequency=low RatingLevel=medium BorrowDurationLevel=medium 20
+ReadingFrequency=medium Department=CIVIL RatingLevel=low 20
+ReadingFrequency=medium Department=CIVIL BorrowDurationLevel=medium 28
+AcademicYear_x=3rd Year RatingLevel=medium BorrowDurationLevel=long 21
+Department=CIVIL RatingLevel=low BorrowDurationLevel=medium 20
+
+Best rules found:
+
+ 1. ReadingFrequency=medium RatingLevel=low 23 ==> Department=CIVIL 20    <conf:(0.87)> lift:(2) lev:(0.05) [9] conv:(3.25)
+ 2. Department=EEE 29 ==> BorrowDurationLevel=long 25    <conf:(0.86)> lift:(2.08) lev:(0.06) [12] conv:(3.39)
+ 3. Genre=fiction RatingLevel=medium 24 ==> BorrowDurationLevel=long 20    <conf:(0.83)> lift:(2.01) lev:(0.05) [10] conv:(2.81)
+ 4. Genre=fiction 43 ==> BorrowDurationLevel=long 33    <conf:(0.77)> lift:(1.85) lev:(0.08) [15] conv:(2.29)
+ 5. AcademicYear_x=3rd Year RatingLevel=medium 28 ==> BorrowDurationLevel=long 21    <conf:(0.75)> lift:(1.81) lev:(0.05) [9] conv:(2.05)
+ 6. ReadingFrequency=medium BorrowDurationLevel=medium 38 ==> Department=CIVIL 28    <conf:(0.74)> lift:(1.69) lev:(0.06) [11] conv:(1.95)
+ 7. ReadingFrequency=medium 63 ==> Department=CIVIL 46    <conf:(0.73)> lift:(1.68) lev:(0.09) [18] conv:(1.98)
+

@@ -1,0 +1,89 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 10.0 -V 0.001 -S 1 -depth 5
+Relation:     final-weka.filters.unsupervised.attribute.Remove-R1-3,5,7-11,13-21,23-weka.filters.unsupervised.attribute.NumericToNominal-Rfirst-last-weka.filters.unsupervised.attribute.Remove-R6-weka.filters.unsupervised.attribute.Remove-R3
+Instances:    200
+Attributes:   4
+              Genre
+              ReadingFrequency
+              Department
+              RatingLevel
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+Genre = ml
+|   ReadingFrequency = low : medium (18/8)
+|   ReadingFrequency = high : low (5/2)
+|   ReadingFrequency = medium : medium (4/2)
+Genre = non-fiction
+|   Department = EEE : low (0/0)
+|   Department = MECH : medium (9/3)
+|   Department = CSE : low (4/1)
+|   Department = CIVIL : low (14/3)
+|   Department = ECE : low (5/1)
+Genre = academic
+|   ReadingFrequency = low
+|   |   Department = EEE : medium (4/0)
+|   |   Department = MECH : low (4/0)
+|   |   Department = CSE : medium (5/0)
+|   |   Department = CIVIL : low (7/0)
+|   |   Department = ECE : low (0/0)
+|   ReadingFrequency = high : high (16/7)
+|   ReadingFrequency = medium
+|   |   Department = EEE : low (0/0)
+|   |   Department = MECH : medium (2/0)
+|   |   Department = CSE : high (2/0)
+|   |   Department = CIVIL : low (14/6)
+|   |   Department = ECE : high (3/0)
+Genre = fiction
+|   Department = EEE : low (14/6)
+|   Department = MECH : medium (9/1)
+|   Department = CSE : high (3/0)
+|   Department = CIVIL : medium (17/7)
+|   Department = ECE : low (0/0)
+Genre = ds
+|   ReadingFrequency = low : medium (10/2)
+|   ReadingFrequency = high : medium (4/0)
+|   ReadingFrequency = medium : high (9/1)
+Genre = ai : medium (18/8)
+
+Size of the tree : 36
+Max depth of tree: 5
+
+Time taken to build model: 0 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.04 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         142               71      %
+Incorrectly Classified Instances        58               29      %
+Kappa statistic                          0.532 
+Mean absolute error                      0.252 
+Root mean squared error                  0.3549
+Relative absolute error                 60.3678 %
+Root relative squared error             77.734  %
+Total Number of Instances              200     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.649    0.151    0.716      0.649    0.681      0.509    0.851     0.756     low
+                 0.758    0.284    0.690      0.758    0.723      0.472    0.820     0.785     medium
+                 0.714    0.048    0.758      0.714    0.735      0.682    0.957     0.803     high
+Weighted Avg.    0.710    0.194    0.712      0.710    0.709      0.522    0.856     0.777     
+
+=== Confusion Matrix ===
+
+  a  b  c   <-- classified as
+ 48 23  3 |  a = low
+ 17 69  5 |  b = medium
+  2  8 25 |  c = high
+

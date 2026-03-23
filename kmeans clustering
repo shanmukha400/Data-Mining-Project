@@ -1,0 +1,87 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 4 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     final-weka.filters.unsupervised.attribute.Remove-R1-2,13,17-18
+Instances:    200
+Attributes:   20
+              BookTitle_x
+              Genre
+              UserRating_x
+              ReadingFrequency
+              PreferredCategory
+              TimesViewed
+              TimesBorrowed_x
+              RecommendationScore
+              StudentDepartment
+              AcademicYear_x
+              BookTitle_y
+              Author
+              Category
+              BorrowDurationDays
+              UserRating_y
+              TimesBorrowed_y
+              Department
+              AcademicYear_y
+              RatingLevel
+              BorrowDurationLevel
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 7
+Within cluster sum of squared errors: 1559.4167675182541
+
+Initial starting points (random):
+
+Cluster 0: Book_139,ds,2,low,AI,6,6,3,CSE,'1st Year',Book_151,Author_40,ML,26,2,4,MECH,'4th Year',low,long
+Cluster 1: Book_100,fiction,2,high,DS,11,10,2.59,ECE,'1st Year',Book_168,Author_82,'Data Science',27,5,4,EEE,'1st Year',low,long
+Cluster 2: Book_123,academic,2.904459,medium,AI,9,9,4.04,CIVIL,'2nd Year',Book_100,Author_24,Electronics,7,1,7,CIVIL,'4th Year',medium,short
+Cluster 3: Book_143,academic,2,high,DS,16,3,3.83,EEE,'1st Year',Book_8,Author_21,Electronics,16,5,7,EEE,'1st Year',low,medium
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                     Cluster#
+Attribute               Full Data           0           1           2           3
+                          (200.0)      (48.0)      (56.0)      (61.0)      (35.0)
+=================================================================================
+BookTitle_x              Book_159      Book_5    Book_174     Book_38     Book_91
+Genre                    academic non-fiction     fiction    academic    academic
+UserRating_x                2.923      2.7569      3.1912      3.4191      1.8571
+ReadingFrequency              low         low        high      medium         low
+PreferredCategory              AI          AI          DS Electronics       Maths
+TimesViewed                10.085      11.375     10.4464      9.3279      9.0571
+TimesBorrowed_x             6.275      5.9792      6.4107      5.6557      7.5429
+RecommendationScore        2.3933      2.1971      1.9604      2.7116         2.8
+StudentDepartment           CIVIL         CSE         ECE       CIVIL         EEE
+AcademicYear_x           3rd Year    1st Year    3rd Year    2nd Year    4th Year
+BookTitle_y               Book_58     Book_22     Book_58    Book_113      Book_6
+Author                  Author_20   Author_26   Author_20   Author_80   Author_34
+Category              Mathematics          ML Mathematics          ML          AI
+BorrowDurationDays        18.4465     14.8125     24.1563     17.4352     16.0571
+UserRating_y                    3      2.4375      4.3214           2         3.4
+TimesBorrowed_y              4.96      4.1458      4.9643      4.8525      6.2571
+Department                  CIVIL        MECH         EEE       CIVIL       CIVIL
+AcademicYear_y           4th Year    3rd Year    1st Year    4th Year    2nd Year
+RatingLevel                medium      medium      medium      medium         low
+BorrowDurationLevel        medium      medium        long      medium      medium
+
+
+
+
+Time taken to build model (full training data) : 0.07 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       48 ( 24%)
+1       56 ( 28%)
+2       61 ( 31%)
+3       35 ( 18%)
+
